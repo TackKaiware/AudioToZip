@@ -38,7 +38,7 @@ namespace AudioToZip
                     Mp3ToZip( dir );                                // mp3 -> zip
                     DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 不要なmp3ファイルを削除する
                 }
-                catch ( Exception ex )
+                catch ( Exception )
                 {
                     Console.WriteLine( "ファイルの変換に失敗しました。" );
                 }
