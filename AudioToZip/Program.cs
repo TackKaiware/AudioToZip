@@ -34,8 +34,9 @@ namespace AudioToZip
                 var dir = args[1];
                 try
                 {
-                    WaveToMp3( dir );   // wav -> mp3
-                    Mp3ToZip( dir );    // mp3 -> zip
+                    WaveToMp3( dir );                               // wav -> mp3
+                    DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 念のため、mp3が残っている場合を考慮し、存在すれば削除しておく
+                    Mp3ToZip( dir );                                // mp3 -> zip
                     DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 不要なmp3ファイルを削除する
                 }
                 catch ( Exception )
@@ -141,7 +142,7 @@ namespace AudioToZip
             var files = Directory.GetFiles( dir ).Where( x => Path.GetExtension( x ).Equals( fileType ) );
             foreach ( var file in files )
             {
-                File.Delete( file );
+                if ( File.Exists( file ) ) File.Delete( file );
             }
         }
     }
