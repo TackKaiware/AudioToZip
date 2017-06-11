@@ -35,7 +35,6 @@ namespace AudioToZip
                 try
                 {
                     WaveToMp3( dir );                               // wav -> mp3
-                    DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 念のため、mp3が残っている場合を考慮し、存在すれば削除しておく
                     Mp3ToZip( dir );                                // mp3 -> zip
                     DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 不要なmp3ファイルを削除する
                 }
