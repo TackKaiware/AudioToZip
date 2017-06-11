@@ -38,7 +38,7 @@ namespace AudioToZip
                     Mp3ToZip( dir );                                // mp3 -> zip
                     DeleteSpecifiedTypeFiles( dir, FILE_EXT_MP3 );  // 不要なmp3ファイルを削除する
                 }
-                catch ( Exception )
+                catch ( Exception ex )
                 {
                     Console.WriteLine( "ファイルの変換に失敗しました。" );
                 }
@@ -71,12 +71,13 @@ namespace AudioToZip
                     var inputFile  = new MediaFile { Filename = wave };
                     var outputFile = new MediaFile { Filename = wave.Replace( FILE_EXT_WAV, FILE_EXT_MP3 ) };
 
-                    using ( var engine = new Engine() )
-                    {
-                        engine.Convert( inputFile, outputFile );
-                    }
                     lock ( lockObject )
                     {
+                        using ( var engine = new Engine() )
+                        {
+                            engine.Convert( inputFile, outputFile );
+                        }
+
                         Console.WriteLine( $"{ Path.GetFileName( wave ) } を変換しました。" +
                                            $"({ ++processed }/{ waveFiles.Count() })" );
                     }
@@ -114,10 +115,10 @@ namespace AudioToZip
                     {
                         var inputFile  = mp3;
                         var outputFile = mp3.Replace( FILE_EXT_MP3, FILE_EXT_ZIP );
-
-                        zip.CreateEntryFromFile( inputFile, Path.GetFileName( inputFile ), CompressionLevel.Optimal );
                         lock ( lockObject )
                         {
+                            zip.CreateEntryFromFile( inputFile, Path.GetFileName( inputFile ), CompressionLevel.Optimal );
+
                             Console.WriteLine( $"{ Path.GetFileName( mp3 ) } を圧縮しました。" +
                                                $"({ ++processed }/{ mp3Files.Count() })" );
                         }
