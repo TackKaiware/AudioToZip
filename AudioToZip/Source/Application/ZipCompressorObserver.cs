@@ -1,5 +1,8 @@
 ﻿namespace AudioToZip
 {
+    /// <summary>
+    /// ZIP圧縮オブジェクトの状態を監視するクラス
+    /// </summary>
     public class ZipCompressorObserver : FileConverterObserver
     {
         #region コンストラクタ

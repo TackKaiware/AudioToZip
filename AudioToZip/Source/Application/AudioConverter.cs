@@ -16,7 +16,7 @@ namespace AudioToZip
         /// コンストラクタ
         /// </summary>
         /// <param name="sourceFileType"></param>
-        /// <param name="destinationFileType"></param
+        /// <param name="destinationFileType"></param>
         /// <param name="inputPath"></param>
         /// <param name="outputPath"></param>
         public AudioConverter( FileTypeEnum sourceFileType, FileTypeEnum destinationFileType, string inputPath, string outputPath = null )

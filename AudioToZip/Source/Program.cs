@@ -13,7 +13,6 @@ namespace AudioToZip
         /// <summary>
         /// プログラムのエントリポイント
         /// </summary>
-        /// <param name="args"></param>
         private static void Main()
         {
             Console.WriteLine( $"#### {nameof( AudioToZip )} " +
