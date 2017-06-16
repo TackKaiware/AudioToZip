@@ -50,7 +50,6 @@ namespace AudioToZip
         /// <summary>
         /// オーディオファイルを変換する(複数)
         /// </summary>
-        /// <param name="filePathes"></param>
         protected override void ConvertMultiFile()
         {
             var filePathes = InputPath.GetSpecifiedTypeFiles( SourceFileType );

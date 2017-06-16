@@ -125,7 +125,6 @@ namespace AudioToZip
         /// <summary>
         /// ファイルを変換する
         /// </summary>
-        /// <param name="fileName"></param>
         public void Convert()
         {
             try
@@ -161,19 +160,16 @@ namespace AudioToZip
         /// <summary>
         /// 変換前の前準備
         /// </summary>
-        /// <param name="outputPath"></param>
         protected abstract void PreparationConvert();
 
         /// <summary>
         /// 1つのファイルに対する変換処理
         /// </summary>
-        /// <param name="filePath"></param>
         protected abstract void ConvertSingleFile();
 
         /// <summary>
         /// 複数のファイルに対する変換処理
         /// </summary>
-        /// <param name="filePathes"></param>
         protected abstract void ConvertMultiFile();
 
         #endregion TemplateMethodパターン
@@ -195,7 +191,6 @@ namespace AudioToZip
         /// <summary>
         /// 監視クラスに状態変化を通知する
         /// </summary>
-        /// <param name="status"></param>
         public void NotifyObservers()
         {
             foreach ( var observer in _observers )

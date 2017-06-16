@@ -44,7 +44,7 @@ namespace AudioToZip
         /// <summary>
         /// 監視対象オブジェクトの状態変化時に呼び出され、そのオブジェクトの状態を表示する
         /// </summary>
-        /// <param name="converter"></param>
+        /// <param name="subject"></param>
         public override void Update( IObservable subject )
         {
             var converter = subject as FileConverter ?? throw new InvalidProgramException();

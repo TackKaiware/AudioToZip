@@ -13,7 +13,7 @@ namespace AudioToZip
         /// <summary>
         /// 入出力用のMediaFileオブジェクトを生成する
         /// </summary>
-        /// <param name="inputPath"></param>
+        /// <param name="sourceFile"></param>
         /// <param name="outputPath"></param>
         /// <param name="sourceFileType"></param>
         /// <param name="destinationFileType"></param>
@@ -34,6 +34,7 @@ namespace AudioToZip
         /// 指定された種類のファイルのみ取得する
         /// </summary>
         /// <param name="path"></param>
+        /// <param name="fileType"></param>
         /// <returns></returns>
         public static IEnumerable<string> GetSpecifiedTypeFiles( this string path, FileTypeEnum fileType )
         {

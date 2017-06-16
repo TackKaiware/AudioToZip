@@ -20,7 +20,6 @@
         /// <summary>
         /// 監視クラスに状態変化を通知する
         /// </summary>
-        /// <param name="status"></param>
         void NotifyObservers();
     }
 }

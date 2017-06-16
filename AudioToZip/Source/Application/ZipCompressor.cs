@@ -38,7 +38,6 @@ namespace AudioToZip
         /// <summary>
         /// ZIPファイルに変換する(1つ)
         /// </summary>
-        /// <param name="filePath"></param>
         protected override void ConvertSingleFile()
         {
             using ( var zip = ZipFile.Open( OutputPath, ZipArchiveMode.Update, Encoding.GetEncoding( "shift_jis" ) ) )
@@ -53,7 +52,6 @@ namespace AudioToZip
         /// <summary>
         /// ZIPファイルに変換する(複数)
         /// </summary>
-        /// <param name="filePathes"></param>
         protected override void ConvertMultiFile()
         {
             using ( var zip = ZipFile.Open( OutputPath, ZipArchiveMode.Update, Encoding.GetEncoding( "shift_jis" ) ) )
