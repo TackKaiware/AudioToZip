@@ -8,7 +8,7 @@ namespace AudioToZip
     /// ファイル変換系クラスの監視クラス(抽象)
     /// (Observerパターンの監視する側)
     /// </summary>
-    internal abstract class FileConverterObserver : Observer
+    public abstract class FileConverterObserver : Observer
     {
         #region フィールド
 

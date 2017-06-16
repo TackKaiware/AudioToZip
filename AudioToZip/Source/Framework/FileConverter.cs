@@ -10,7 +10,7 @@ namespace AudioToZip
     /// ファイル変換系クラス(抽象)
     /// (Observerパターンの監視される側)
     /// </summary>
-    internal abstract class FileConverter : IObservable
+    public abstract class FileConverter : IObservable
     {
         #region フィールド
 
@@ -46,7 +46,7 @@ namespace AudioToZip
             SourceFileType = sourceFileType;
             DestinationFileType = destinationFileType;
             InputPath = inputPath;
-            OutputPath = outputPath ?? PathUtility.GetDirectoryName( inputPath );
+            OutputPath = outputPath ?? inputPath.GetDirectoryName();
 
             if ( Directory.Exists( inputPath ) )
             {
@@ -54,11 +54,11 @@ namespace AudioToZip
                 if ( sourceFileType.Equals( FileTypeEnum.All ) )
                     TotalCount = files.Count();
                 else
-                    TotalCount = files.Where( x => Path.GetExtension( x ).Equals( sourceFileType.GetExtention( true ) ) ).Count();
+                    TotalCount = files.Where( x => x.FileTypeEquals( sourceFileType ) ).Count();
             }
             else
             {
-                TotalCount = ( Path.GetExtension( inputPath ).Equals( sourceFileType.GetExtention( true ) ) ) ? 1 : 0;
+                TotalCount = inputPath.FileTypeEquals( sourceFileType ) ? 1 : 0;
             }
         }
 

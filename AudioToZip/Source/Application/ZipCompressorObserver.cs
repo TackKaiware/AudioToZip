@@ -1,6 +1,6 @@
 ﻿namespace AudioToZip
 {
-    internal class ZipCompressorObserver : FileConverterObserver
+    public class ZipCompressorObserver : FileConverterObserver
     {
         #region コンストラクタ
 

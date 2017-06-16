@@ -8,7 +8,7 @@ namespace AudioToZip
     /// <summary>
     /// オーディオファイル変換クラス
     /// </summary>
-    internal class AudioConverter : FileConverter
+    public class AudioConverter : FileConverter
     {
         #region コンストラクタ
 
@@ -53,7 +53,7 @@ namespace AudioToZip
         /// <param name="filePathes"></param>
         protected override void ConvertMultiFile()
         {
-            var filePathes = PathUtility.GetSpecifiedTypeFiles( InputPath, SourceFileType );
+            var filePathes = InputPath.GetSpecifiedTypeFiles( SourceFileType );
 
             // 圧縮に時間がかかるので並列処理する
             var lockObject = new object();

@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Source\Application\AudioConverter.cs" />
     <Compile Include="Source\Application\AudioConverterObserver.cs" />
+    <Compile Include="Source\Framework\Enums\FileTypeEnumExtension.cs" />
     <Compile Include="Source\Framework\FileConverterObserver.cs" />
     <Compile Include="Source\Framework\Enums\FileTypeEnum.cs" />
     <Compile Include="Source\Framework\FileConverter.cs" />

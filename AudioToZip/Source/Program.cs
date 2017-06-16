@@ -30,7 +30,7 @@ namespace AudioToZip
             var inputPath = args[1];
 
             // MP3を格納する一時フォルダ/MP3ファイル
-            var tempDirectory = PathUtility.GetDirectoryName( inputPath ) + $"_{ DateTime.Now.ToString( "yyyyMMdd_hhmmss_fff" ) }";
+            var tempDirectory = inputPath.GetDirectoryName() + $"_{ DateTime.Now.ToString( "yyyyMMdd_hhmmss_fff" ) }";
 
             // WAVE -> MP3変換
             var converter = new AudioConverter( Wave, Mp3, inputPath, tempDirectory );
@@ -48,7 +48,7 @@ namespace AudioToZip
                 // ZIPファイルが一時フォルダの名前になっているのでリネームする
                 var oldName = tempDirectory + Zip.GetExtention( true );
                 var newName = inputPath + Zip.GetExtention( true );
-                PathUtility.Rename( oldName, newName );
+                oldName.Rename( newName );
 
                 // 入力元のディレクトに生成した不要な一時フォルダ/ファイルを削除
                 Directory.Delete( tempDirectory, true );

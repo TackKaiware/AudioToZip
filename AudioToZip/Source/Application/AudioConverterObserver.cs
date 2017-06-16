@@ -3,7 +3,7 @@
     /// <summary>
     /// オーディオファイル変換オブジェクトの状態を監視するクラス
     /// </summary>
-    internal class AudioConverterObserver : FileConverterObserver
+    public class AudioConverterObserver : FileConverterObserver
     {
         #region コンストラクタ
 

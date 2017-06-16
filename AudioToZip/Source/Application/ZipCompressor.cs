@@ -9,7 +9,7 @@ namespace AudioToZip
     /// <summary>
     /// ZIPファイル変換クラス
     /// </summary>
-    internal class ZipCompressor : FileConverter
+    public class ZipCompressor : FileConverter
     {
         #region 公開クラス
 
@@ -58,7 +58,7 @@ namespace AudioToZip
         {
             using ( var zip = ZipFile.Open( OutputPath, ZipArchiveMode.Update, Encoding.GetEncoding( "shift_jis" ) ) )
             {
-                var filePathes = PathUtility.GetSpecifiedTypeFiles( InputPath, SourceFileType );
+                var filePathes = InputPath.GetSpecifiedTypeFiles( SourceFileType );
 
                 // 圧縮に時間がかかるので並列処理する
                 var lockObject = new object();

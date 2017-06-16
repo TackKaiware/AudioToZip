@@ -3,7 +3,7 @@
     /// <summary>
     /// FileConverterオブジェクトの状態
     /// </summary>
-    internal enum FileConverterStatusEnum
+    public enum FileConverterStatusEnum
     {
         /// <summary>
         /// 待機中

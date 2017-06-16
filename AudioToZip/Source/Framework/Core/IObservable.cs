@@ -3,7 +3,7 @@
     /// <summary>
     /// 監視可能インターフェース
     /// </summary>
-    internal interface IObservable
+    public interface IObservable
     {
         /// <summary>
         /// 監視クラスを追加する
